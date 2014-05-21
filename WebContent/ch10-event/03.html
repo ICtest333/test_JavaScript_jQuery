@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>textarea</title>
+<script type="text/javascript">
+	function test1(aa){
+		if(aa.value==''){
+			aa.value = aa.defaultValue;
+		}
+	}
+	function test2(aa){
+		if(aa.value==aa.defaultValue){
+			aa.value='';
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="myform">
+		<textarea rows="5" cols="30" name="notice" onblur="test1(this);" onfocus="test2(this);">클릭하면 글자가 없어집니다.</textarea>
+	</form>
+</body>
+</html>

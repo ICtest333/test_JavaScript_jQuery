@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name 속성을 통해서 문서 객체에 접근(name중복가능하므로 1개라도 배열로 인식)</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var prev = document.getElementsByName('prev');
+		var next = document.getElementsByName('next');
+		
+		prev[0].innerHTML = '이전';
+		next[0].innerHTML = '다음';
+		
+		var country = document.getElementsByName('country');
+		country[0].checked = true;
+		
+		var comment = document.getElementsByName('comment');
+		comment[0].value = '간단한 설명 입력';
+		
+	};
+</script>
+</head>
+<body>
+	<button name="prev">prev</button><br>
+	<button name="next">next</button><br>
+	
+	<input type="checkbox" name="country" value="한국">한국
+	<input type="checkbox" name="country" value="미국">미국
+	<input type="checkbox" name="country" value="중국">중국
+	<br>
+	
+	<input type="text" name="comment">
+</body>
+</html>

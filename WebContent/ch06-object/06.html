@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 제거</title>
+<script type="text/javascript">
+	//빈 객체 생성
+	var student = {};
+	
+	//객체에 속성 추가
+	student.이름 = '홍길동';
+	student.취미 = '악기';
+	student.특기 = '프로그래밍';
+	student.장래희망 = '프로그래머';
+	
+	//객체의 메서드 추가(java에서의 재정의와 같은 효과)
+	student.toString = function(){
+		var msg = '';
+		for(var key in this){ // this: 객체안에서 객체(자신:student) 참조
+			if(key != 'toString'){ //메서드 내용 출력 안할려구..
+				msg += key + ':' + this[key] + '<br>';
+			}
+		}
+		return msg;
+	}; 
+	
+	//출력
+	document.write(student);
+	document.write('=======================<br>');
+	
+	//속성을 제거
+	delete(student.취미); // = delete student.취미
+	delete student.특기;
+	document.write(student);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

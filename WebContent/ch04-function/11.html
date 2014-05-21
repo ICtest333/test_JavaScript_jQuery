@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 함수 - 인코딩/디코딩 관련함수</title>
+<script type="text/javascript">
+/* 	
+함수 이름 					설명
+escape(uri)				적절한 정도로 인코딩함
+unescape(uri)			적절한 정도로 디코딩함
+encodeURI(uri)			최소한의 문자만 인코딩함
+decodeURI(uri)			최소한읨 문자만 디코딩함
+encodeURIComponent(uri)	대부붐의 문자를 인코딩함
+decodeURIComponent(uri) 대부분의 문자를 디코딩함
+ */	
+ 	//인코딩할 URL 명시
+ 	var URI = 'http://www.naver.com?test=한글';
+ 	
+ 	//출력용 변수
+ 	var output = '';
+ 	
+ 	output += '*escape()<br>';
+ 	output += escape(URI) + '<br><br>';
+ 	output += '*encodeURI()<br>';
+ 	output += encodeURI(URI) + '<br><br>';
+ 	output += '*encodeURIComponent()<br>';
+ 	output += encodeURIComponent(URI);
+ 	
+ 	//출력
+ 	document.write(output);	
+ 	
+/*  	
+ 	*escape()
+ 	http%3A//www.naver.com%3Ftest%3D%uD55C%uAE00 
+ 	
+ 	*encodeURI()
+ 	http://www.naver.com?test=%ED%95%9C%EA%B8%80
+ 			
+	*encodeURIComponent()
+	http%3A%2F%2Fwww.naver.com%3Ftest%3D%ED%95%9C%EA%B8%80 		
+*/
+ 	document.write('<br>=============================<br>');
+ 	
+ 	var eUri = escape(URI); // 인코딩
+ 	document.write(eUri+'<br>'); 
+ 	document.write(unescape(eUri)); // 디코딩
+/* 
+ 	http%3A//www.naver.com%3Ftest%3D%uD55C%uAE00
+ 	http://www.naver.com?test=한글
+*/			
+</script>
+</head>
+<body>
+
+</body>
+</html>

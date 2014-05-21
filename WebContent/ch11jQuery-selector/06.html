@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 선택자와 클래스 선택자 연결</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	// $(document).ready(function(){}); == $(function(){});
+	$(function(){
+		$('.item').css('color','orange');
+		$('h1.item').css('background','red');
+		$('h1.item.select').css('background','blue');
+	});
+</script>
+</head>
+<body>
+	<h1 class="item">Header-0</h1>
+	<h1 class="item select">Header-1</h1>
+	<h1 class="item">Header-2</h1>
+	<p class="item">화요일</p>
+</body>
+</html>

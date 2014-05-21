@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>익명함수 형태의 내부함수</title>
+<script type="text/javascript">
+	function f(){
+		       //익명함수 형태의 내부함수를 바로 반환(return)가능!!
+		return function(){
+			document.write('Helloooooooow');
+		};
+	}
+	//함수호출
+	//f함수를 구동시킨 결과 내부함수가 a에 전달
+	var a = f();
+	//document.write(a); // function (){ documnent.write('Helloooooooow'); }
+	a(); // 내부함수 실행 !!! // Helloooooooow
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

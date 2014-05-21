@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> isFinite / isNaN 함수 </title>
+<script type="text/javascript">
+	var number1 = 10/0;
+	document.write('number1 = '+ number1 + '<br>'); // number1 = Infinity (무한)
+	
+	if(isFinite(number1)){//0으로 나누지 않은경우/유한인경우(true)
+		document.write('유한<br>');
+	}else{//0으로 나눈 경우
+		document.write('무한<br>'); // 무한
+	}
+	
+	document.write('=================<br>');
+	
+	var number2 = 10/'A';
+	document.write('number2 = '+ number2 + '<br>'); // number2 = NaN (Not a Number)
+	
+	if(isNaN(number2)){//숫자가 아닌경우(true)
+		document.write('숫자가 아님<br>');              // 숫자가 아님
+	}else{//숫자인 경우
+		document.write('숫자임<br>');
+	}
+	
+	document.write('=================<br>');
+	
+	if(number1 == Infinity){
+		document.write('무한<br>'); 			// 무한
+	}else{
+		document.write('유한<br>'); 
+	}
+	
+	var number3 = -10/0; // -Infinity 반환
+	if(number3 == -Infinity){				// 사용가능하나 불편(+-구분해줘야함)
+		document.write('무한<br>');
+	}else{
+		document.write('유한<br>');
+	}
+	
+	if(number2 == NaN){						//항상 false를 반환하기 때문에 isNaN()을 사용해야 
+		                                    //정상적인 결과를 얻을 수 있음
+		document.write('숫자가 아님<br>');  
+	}else{//숫자인 경우
+		document.write('숫자임<br>');			//숫자임(잘못된 결과값반환)
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

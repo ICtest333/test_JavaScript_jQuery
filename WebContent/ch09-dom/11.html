@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주석 생성</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var elem=document.createElement('div');
+		var text=document.createTextNode('This is a new div element');
+		elem.appendChild(text);
+		
+		document.body.appendChild(elem);
+		                        //주석 생성
+		var comment = document.createComment('This is a comment');
+		                          //주석 ,  태그
+		document.body.insertBefore(comment, elem);
+		
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

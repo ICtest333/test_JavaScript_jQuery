@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인터넷 익스플로러 이벤트 모델 (DOM level 2 관련)</title>
+<script type="text/javascript">
+/* 
+DOM Level 2 이벤트 모델 - 인터넷 익스플로러 용(하위 버전)
+attachEvent(eventProperty, eventHandler) : 이벤트 연결
+detachEvent(eventProperty, eventHandler) : 이벤트 제거
+ */
+ 	//윈도우가 로드될 때
+ 	window.attachEvent('onload',function(){
+ 		var header = document.getElementById('myHeader);
+ 		
+ 		//이벤트 연결
+ 		header.attachEvent('onclick',function(){
+ 			alert('클릭');
+ 		});
+ 	});
+ 
+</script>
+</head>
+<body>
+	<h1 id="myHeader">Click</h1>
+</body>
+</html>

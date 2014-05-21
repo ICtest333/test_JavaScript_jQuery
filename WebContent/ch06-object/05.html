@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>빈 객체에 속성 추가</title>
+<script type="text/javascript">
+	//빈 객체 생성
+	var student = {};
+	
+	document.write(student + '<br>');            // [object Object] <= toString() 자동호출
+	document.write(student.toString() + '<br>'); // [object Object]
+	
+	//객체에 속성 추가
+	student.이름 = '홍길동';
+	student.취미 = '악기';
+	student.특기 = '프로그래밍';
+	student.장래희망 = '프로그래머';
+	
+	//in 키워드를 이용해서 객체내의 속성 존재 여부 체크
+	document.write(('특기' in student) + '<br>'); //true
+	document.write(student.특기 + '<br>'); //프로그래밍	
+	document.write('===================<br>');
+	
+	var output = '';
+	for(var key in student){
+		output += key + ':' + student[key] + '<br>';
+	}
+	document.write(output);	
+	document.write('===================<br>');
+	
+	//객체의 메서드 추가(java에서의 재정의와 같은 효과)
+	student.toString = function(){
+		var msg = '';
+		for(var key in this){ // this: 객체안에서 객체(자신:student) 참조
+			if(key != 'toString'){ //메서드 내용 출력 안할려구..
+				msg += key + ':' + this[key] + '<br>';
+			}
+		}
+		return msg;
+	}; 
+	
+	//출력
+	document.write(student.toString() + '<br>');
+	document.write('===================<br>');
+	document.write(student);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

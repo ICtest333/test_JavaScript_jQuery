@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>노드의 치환</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var newNode = document.createElement('div');
+		newNode.innerHTML = '크크';
+		
+		var oldNode = document.getElementById('foo');
+		var parentNode = oldNode.parentNode; // p태그의 부모인 body
+		parentNode.replaceChild(newNode, oldNode);
+	};
+	
+</script>
+</head>
+<body>
+	<p id="foo">하하</p>
+</body>
+</html>

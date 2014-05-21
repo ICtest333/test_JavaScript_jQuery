@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비교연산자</title>
+<script type="text/javascript">
+/* 
+연산자		설명
+===		양변의 자료형과 값이 일치 여부
+!==		양변의 자료형과 값이 다른지 여부
+ */
+ 	
+ 	var a=20, b='20', c;
+ 	
+ 	c = a == b; //값만 일치 여부 확인
+ 	document.write('a == b  : ' + c + '<br>');
+ 	
+ 	c = a === b; //자료형과 값 모두 확인
+ 	document.write('a === b : ' + c + '<br>');
+ 
+ 	c = a != b; //값만 다른지 여부 확인
+ 	document.write('a != b  : ' + c + '<br>');
+ 	
+ 	c = a !== b; // 자료형과 값 모두  확인
+ 	document.write('a !== b : ' + c + '<br>');
+ 	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+출력결과:
+a == b : true
+a === b : false
+a != b : false
+a !== b : true
+ -->

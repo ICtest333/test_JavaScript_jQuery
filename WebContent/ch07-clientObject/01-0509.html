@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 관련 객체(object)</title>
+<script type="text/javascript">
+/* 
+브라우저 관련 객체
+
+			window 객체
+				|
+	......................................
+	|        |         |        |        |
+location  navigator  history  screen   document 
+
+window.open(URL,새창이름,옵션) : 창 오픈   // window.생략하기도 (alert)
+ -옵션
+  width : 새 윈도우 넓이
+  height: 새 윈도우 높이
+  location : 주소 입력창 유무
+  menubar : 메뉴 유무
+  resizable: 화면크기 조절 가능여부
+  status : 상태 표시줄 유무
+  toolbar
+  scrollbar
+wondow.close(): 창 닫기
+
+ */
+ 
+ 	var win;
+ 	//창열기
+ 	function winOpen(){     //URL,               새창의 이름,   옵션
+ 		win = window.open('http://www.naver.com','child','toolbar=no,location=no,status=no,menubar=no,resizeable=no,scrollbars=no,width=400,height=300');
+ 	}
+ 	//창닫기
+ 	function winClose(){
+ 		win.close();//메서드
+ 	}
+ 
+</script>
+</head>
+<body>
+	<input type="button" value="창 열기" onclick="winOpen()"><br>
+	<input type="button" value="창 닫기" onclick="winClose()">
+</body>
+</html>

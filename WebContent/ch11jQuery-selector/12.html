@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식 필터 선택자 3</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('input:checked').attr('checked',false);
+		$('input:disabled').attr('disabled',false);
+	});
+</script>
+</head>
+<body>
+	<input type="checkbox" name="city" value="서울" checked>서울
+	<input type="button" value="확인" disabled>
+</body>
+</html>

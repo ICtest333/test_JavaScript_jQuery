@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+<script type="text/javascript">
+	function f(){
+		var n = 123;
+		//내부함수(선언적 함수)
+		function g(){
+			document.write('n = ' + n + '<br>'); //지역변수n: 함수f 종료전까지 호출가능
+			document.write('g is called too!');
+		}
+		g(); // 내부함수 호출
+	}
+	//함수호출
+	f();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+n = 123
+g is called too
+ -->

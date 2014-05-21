@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본이벤트제거 : preventDefault();</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('a').click(function(){
+			$(this).css('background','blue');
+			
+			//기본이벤트제거(배경만바뀌고링크로안넘어가게끔)
+			event.preventDefault();
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>
+		<a href="http://www.naver.com">네이버</a>
+	</h1>
+</body>
+</html>

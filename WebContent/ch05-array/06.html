@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열의 메서드</title>
+<script type="text/javascript">
+	var array = ['파도','하늘','도시','구름'];
+	            // 0	1	 2		3
+	document.write(array.join() + '<br>'); //파도,하늘,도시,구름
+	                   //join(): 기본값이 쉼표를 구분자로 하는 문자열 반환, 구분자별도지정가능
+	//구분자 별도지정
+	document.write(array.join('-') + '<br>'); //파도-하늘-도시-구름
+	
+	document.write(array.slice(1,3) + '<br>'); //하늘,도시
+	                   //slice(start,end): start 인덱스부터 end 인덱스전까지 요소를 추출해서 새로운 배열을 생성
+	document.write(array.slice(2) + '<br>'); //도시,구름
+	                        // 지정한 인덱스부터 마직막 인덱스까지 요소를 추출해서 새로운 배열을 생성
+
+	document.write(array.concat('서울','부산') + '<br>'); //파도,하늘,도시,구름,서울,부산
+                      // concat() : 지정한 문자열을 배열의 마지막 인덱스에 추가해서 새로운 배열을 생성
+	document.write(array.concat(['한국','미국']) + '<br>'); //파도,하늘,도시,구름,한국,미국
+	                    // 지정한 배열을 호출한 배열의 마직막 인덱스에 추가해서 새로운 배열을 생성    
+	                        
+	  
+</script>
+</head>
+<body>
+
+</body>
+</html>

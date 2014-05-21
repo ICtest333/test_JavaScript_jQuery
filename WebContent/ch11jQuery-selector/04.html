@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>여러개의 태그 선택</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//여러개의 태그 선택 (사이에 쉼표)
+		$('h1,p').css('color','orange');
+	});
+</script>
+</head>
+<body>
+	<h1>월요일</h1>
+	<p>내일은 수요일</p>
+	<h1>화요일</h1>
+	<div>모레는 목요일</div>
+</body>
+</html>

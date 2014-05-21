@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 객체 (호출)</title>
+<script type="text/javascript">
+/* 
+인터넷 익스플러러8이하에서는 이벤트가 발생할 때 이벤트 객체를 windoew.event속성으로구함
+인터넷 익스플러러9이상 & 비IE계열은 이벤트 핸들러 함수의 매개변수(e)로 이벤트객체를 전달받음
+즉, IE9이상은 이벤트핸들러매개변수(e)와, windoew.event속성도 지원
+ */
+	window.onload=function(){
+		document.body.onclick=function(e){
+			         //비IE와 IE호환성 유지
+			var event = e || window.event; 
+			document.body.innerHTML = '';
+			for(var key in event){
+				document.body.innerHTML += '<p>'+key+':'+event[key]+'</p>';
+			}
+		};
+	};
+</script>
+</head>
+<body>
+	<h1>Click</h1>
+</body>
+</html>
+<!-- 화면 클릭 이벤트에 따라 내용 바뀜...
+dataTransfer:null
+
+toElement:[object HTMLBodyElement]
+
+fromElement:null
+
+y:38
+
+x:188
+
+offsetY:22
+
+offsetX:180
+
+webkitMovementY:0
+
+webkitMovementX:0
+
+relatedTarget:null
+
+button:0
+
+metaKey:false
+
+altKey:false
+
+shiftKey:false
+
+ctrlKey:false
+
+clientY:38
+
+clientX:188
+
+screenY:119
+
+screenX:251
+
+which:1
+
+pageY:38
+
+pageX:188
+
+layerY:38
+
+layerX:188
+
+charCode:0
+
+keyCode:0
+
+detail:1
+
+view:[object Window]
+
+clipboardData:undefined
+
+cancelBubble:false
+
+returnValue:true
+
+srcElement:[object HTMLBodyElement]
+
+defaultPrevented:false
+
+timeStamp:1399944510509
+
+cancelable:true
+
+bubbles:true
+
+eventPhase:2
+
+currentTarget:[object HTMLBodyElement]
+
+target:[object HTMLBodyElement]
+
+type:click
+
+initMouseEvent:function initMouseEvent() { [native code] }
+
+initUIEvent:function initUIEvent() { [native code] }
+
+stopPropagation:function stopPropagation() { [native code] }
+
+preventDefault:function preventDefault() { [native code] }
+
+initEvent:function initEvent() { [native code] }
+
+stopImmediatePropagation:function stopImmediatePropagation() { [native code] }
+
+NONE:0
+
+CAPTURING_PHASE:1
+
+AT_TARGET:2
+
+BUBBLING_PHASE:3
+
+MOUSEDOWN:1
+
+MOUSEUP:2
+
+MOUSEOVER:4
+
+MOUSEOUT:8
+
+MOUSEMOVE:16
+
+MOUSEDRAG:32
+
+CLICK:64
+
+DBLCLICK:128
+
+KEYDOWN:256
+
+KEYUP:512
+
+KEYPRESS:1024
+
+DRAGDROP:2048
+
+FOCUS:4096
+
+BLUR:8192
+
+SELECT:16384
+
+CHANGE:32768
+ -->

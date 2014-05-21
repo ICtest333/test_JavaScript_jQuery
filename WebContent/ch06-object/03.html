@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성과 메서드 사용</title>
+<script type="text/javascript">
+
+	var name = '하하'; //전역변수
+
+	var person = {
+			//속성 지정
+			name:'홍길동',
+			//메서드 지정(key:function)
+			eat:function(food){
+				
+				var name = '호동';//지역변수
+				
+				// 메서드에서 속성을 호출하고자 한다면 this 키워드를 사용해서
+				//속성에 접근해야 함. this를 붙이지 않으면 메서드의 지역변수/ 전역변수로 인식
+				alert(this.name+'이 '+food+'을 먹습니다.'); // this.name: 객체(자신)의 속성
+				    //객체.프로퍼티
+			} // 세미콜론(;)없음			
+	};
+	
+	//메서드 호출
+	person.eat('밥'); // 소괄호()=>실행
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

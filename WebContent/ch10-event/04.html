@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 크기 변경</title>
+<script type="text/javascript">
+	function img1(path){
+		var bigImg = document.getElementById('bigImg');
+		bigImg.style.display='';
+		bigImg.src=path;
+		bigImg.width=500;
+		bigImg.height=350;
+	}
+	function img2(){
+		var bigImg = document.getElementById('bigImg');
+		bigImg.style.display='none';		
+	}
+</script>
+</head>
+<body>
+<div>
+	<img src="Penguins.jpg" width="83" onmouseout="img2()" onmouseover="img1('Penguins.jpg')" style="cursor:pointer;">
+	<img src="Koala.jpg" width="83" onmouseout="img2()" onmouseover="img1('Koala.jpg')" style="cursor:pointer;">
+</div>
+<div>
+	<img id="bigImg" style="display:none">
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 추가</title>
+<style type="text/css">
+	.high_light{
+		background:yellow;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//클래스추가 : 내부적으로 <h1>태그들을 배열로 인식
+		$('h1').addClass('high_light');
+	});
+</script>
+</head>
+<body>
+	<h1>item - 0</h1>
+	<h1>item - 1</h1>
+	<h1>item - 2</h1>
+	<h1>item - 3</h1>
+	<h1>item - 4</h1>
+</body>
+</html>

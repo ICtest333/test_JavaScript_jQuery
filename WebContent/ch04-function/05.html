@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 매개변수(인자)로 받는 함수</title>
+<script type="text/javascript">
+
+	//함수를 10번 호출하는 함수
+	function callFunctionTenTimes(otherFunction){
+		for(var i=0;i<10;i++){
+			otherFunction(); // 매개변수로 전달된 함수를 실행
+		}
+	}
+	
+	//선언적 함수
+	function justFunction(){
+		document.write('Happy Day!!<br>');
+	}
+	
+	//함수 호출(함수명만을 인자로 넘김. 소괄호붙이면 안됨)
+	//callFunctionTenTimes(justFunction()); 이런식으로 코드를 작성하면
+	//매개변수로 함수를 전달하는 것이 아니라 함수를 한 번 실행하는 것을 의미함. 따라서,
+	//전달되는 함수가 없기때문에 함수가 한번 실행된후 오류가 발생함
+	callFunctionTenTimes(justFunction); //함수명을 인자로 넘기면서 소괄호 넣으면(justFunction()) 오류발생함
+	                                    //소괄호를 붙인다는 것은 그자리에서 함수를 실행하겠다는 것임
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+Happy Day!!
+ -->

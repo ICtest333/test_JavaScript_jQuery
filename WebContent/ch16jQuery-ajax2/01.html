@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비동기 통신</title>
+<style type="text/css">
+	ul{
+		padding:0;
+		margin:0;
+		list-style:none;
+	}
+	ul ui{
+		padding:0;
+		margin:0 0 10px 0;
+	}
+	label{
+		width:150px;
+		float:left;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>  <!-- json2.js : 문자열 => 객체로 만듬 -->
+<script type="text/javascript">
+	$(function(){
+		//목록
+		function selectData(){
+			//table 태그의 내부 내용물 제거(초기화)
+			$('#output').empty();
+			
+			$.getJSON('getPeopleJSON.jsp',function(data){
+				$(data).each(function(index,item){ // item : JSON 객체
+					var output = '';
+					output += '<tr>';
+					output += '<td>' + item.id + '</td>';
+					output += '<td>' + item.name + '</td>';
+					output += '<td>' + item.job + '</td>';
+					output += '<td>' + item.address + '</td>';
+					output += '<td>' + item.bloodType + '</td>';
+					output += '</tr>';
+					
+					$('#output').append(output);
+					
+				});
+			});
+			
+		}
+		//등록
+		
+		//이벤트 연결
+		$('#insertForm').submit(function(event){
+			//입력 양식의 내용을 요청 매개 변수 문자열로 만듬
+			var data = $(this).serialize();
+			    //요청URL, 전송할데이터, 전송성공시 호출함수
+			$.post('insertPerson.jsp',data,initForm); // initForm => 함수등록시 함수명만!!(괄호없음)
+			    
+			//기본이벤트제거
+			event.preventDefault();
+			
+		});
+		
+		function initForm(data){
+			// data의 정보는 객체형태로 넘오는 것이 아니라 문자열 형태로 넘어오기때문에
+			// json2.js 를 이용해서 객체로 변환시킴
+			var s = JSON.parse(data);
+			
+			if(s.result=='success'){
+				alert('등록완료');
+			}else{
+				alert('등록실패');
+				return; // 종료
+			}
+			
+			//초기화
+			$('#id').val('');
+			$('#name').val('');
+			$('#job').val('');
+			$('#address').val('');
+			$('#bloodType').val('');
+			
+			selectData();			
+		}
+		
+		//초기화면에 데이터를 표시
+		selectData();
+	});
+</script>
+</head>
+<body>
+<div>
+	<form id="insertForm" method="post">
+		<fieldset>
+			<legend>데이터 추가</legend>
+			<ul>
+				<li>
+					<label for="id">아이디</label>
+					<input type="text" name="id" id="id">
+				</li>
+				<li>
+					<label for="name">이름</label>
+					<input type="text" name="name" id="name">
+				</li>
+				<li>
+					<label for="job">직업</label>
+					<input type="text" name="job" id="job">
+				</li>
+				<li>
+					<label for="address">주소</label>
+					<input type="text" name="address" id="address">
+				</li>
+				<li>
+					<label for="bloodType">혈액형</label>
+					<input type="text" name="bloodType" id="bloodType">
+				</li>
+				<li>
+					<input type="submit" value="추가">
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+</div>
+<table id="output"></table>
+</body>
+</html>

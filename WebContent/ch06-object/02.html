@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성을 반복문을 이용해 호출</title>
+<script type="text/javascript">
+	var product = {
+			name:'eclipse',
+			price:'1,000원',
+			language:'한국어',
+			supportOS:'Win8',
+			subscription:true			
+	};
+	
+	//출력용 변수
+	var output = '';
+	
+	//for in 반복문
+	for(var key in product){
+		//for in 반복문에서는 procudt.key는 인정되지 않음. product[key] 형식만 인정됨!!!
+		output += '*'+ key + ':' + product[key] + '\n';
+	}
+	alert(output);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

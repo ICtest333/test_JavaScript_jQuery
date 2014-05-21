@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형변환</title>
+<script type="text/javascript">
+                        // 내용              //입력박스에 미리보여지는 글자
+	var input = prompt('숫자를 입력하세요','숫자');
+                //prompt : 입력된 데이터를 무조건 String으로 간주
+                
+    document.write(typeof(input) + ':' + input);
+    document.write('<br>');
+    
+    document.write(input + 10);
+    document.write('<br>');
+    
+    document.write(input * 10); //자동적 형변환
+    //만약 입력한 데이터가 숫작가 아니고 문자열일 경우
+    //NaN(Not a Number) 출력됨
+    
+    document.write('<br>');
+    
+    //(명시적)형변환
+    var numberInput = Number(input); //문자 -> 숫자
+    
+    document.write('<br>명시적 형변환 이후<br>');
+    document.write(typeof(numberInput)+':'+numberInput);
+    document.write('<br>');
+    document.write(numberInput + 10);
+    
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+출력결과:
+string:10  => input에 저장된 데이터의 타입이 string이기 때문에
+1010       =>  + 연산자를 사용하면 덧셈이 되지 않고 연결시켜서 문자열로 ㅁ나듬
+                                 덧셈을 하려면 명시적으로 형변환을 해야 함.         
+100        => 자동적으로 형변환
+
+명시적 형변환 이후
+number:10
+20
+ -->

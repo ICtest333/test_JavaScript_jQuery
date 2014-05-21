@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열과 객체의 사용(중괄호{}형태: Java에는 없는 형태)</title>
+<script type="text/javascript">
+	var students = []; //빈 배열 생성
+	
+	//객체를 배열에 저장
+	students.push({이름:'이순신',국어:94,수학:90,영어:80,과학:70});
+	students.push({이름:'박문수',국어:99,수학:91,영어:81,과학:71});
+	students.push({이름:'홍길동',국어:98,수학:92,영어:82,과학:72});
+	students.push({이름:'장영실',국어:97,수학:93,영어:83,과학:73});
+	students.push({이름:'대장금',국어:96,수학:94,영어:84,과학:74});
+	students.push({이름:'호돌이',국어:95,수학:95,영어:85,과학:75});
+	
+	//students 배열내의 모든 객체에 메서드 추가
+	for(var i in students){
+		//총점을 구하는 메서드 추가
+		students[i].getSum = function(){
+			return this.국어 + this.수학 + this.영어 + this.과학;
+		};
+		//평균을 구하는 메서드 추가
+		students[i].getAverage = function(){
+			return this.getSum()/4;
+		};
+	}
+	
+	//출력
+	var output = '이름, 총점, 평균\n';
+	for(var i in students){
+		output += students[i].이름+', '+students[i].getSum()+', '+students[i].getAverage()+'\n';
+	}
+	alert(output);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

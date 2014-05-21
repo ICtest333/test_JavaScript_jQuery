@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 스타일 제어</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var header = document.getElementById('header');
+		/* 
+		css backgroud-color 속성은 => 자바스크립트에서 backgroudColor 
+		또는 backgroud로 명시해야 함. 자바스크립트에서는 식별자에 하이픈('-')을 사용할 수 없음
+		 */
+		//문서 객체의 스타일을 제어
+		header.style.border = '2px solid black';
+		header.style.color = 'orange';
+		header.style.fontFamily = 'Helvetica';
+		header.style.backgroudColor = 'yellow'; // backgroud-color => backgroudColor
+	};
+</script>
+</head>
+<body>
+	<h1 id="header">Header</h1>
+</body>
+</html>

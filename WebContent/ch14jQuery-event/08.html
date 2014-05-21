@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>현재 또는 미래의 태그에 이벤트 연결하기 : on();</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(document).on('click','h1',function(){
+			var length = $('h1').length; //h1태그의 갯수
+			var targetHTML = $(this).html();
+			$('#wrap').append('<h1>' + length + '-' + targetHTML + '</h1>');
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>Header</h1>
+	</div>
+</body>
+</html>

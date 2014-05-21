@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크립트 태그내에서 이벤트 연결</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var header = document.getElementById('header');
+		
+		//이벤트 연결    (익명 함수)
+		header.onclick = function(){
+			alert('CLICK');
+		};
+		
+	};
+</script>
+</head>
+<body>
+	<div id="header">클릭</div>
+</body>
+</html>

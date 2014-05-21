@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS클래스를 이용한 문서 객체 탐색(CSS클래스명 중복가능:배열인식)</title>
+<script type="text/javascript">
+//HTML5에서 사용 가능, 클래스명 지정 가능
+//HTML5가 아니어도 최신 브라우저에서는 지원 가능
+
+	window.onload=function(){
+		var foo = document.getElementsByClassName('matched');
+		
+		var output = '';
+		for(var i=0;i<foo.length;i++){
+			output += foo[i].innerHTML + '\n';			
+		}
+		alert(output);
+		
+		var foo2 = document.getElementById('foo');
+		var fooMatched = foo2.getElementsByClassName('matched');
+		
+		var output2 = '';
+		for(var i=0;i<fooMatched.length;i++){
+			output2 += fooMatched[i].innerHTML + '\n';
+		}
+		alert(output2);
+		
+		//클래스명이 여러개인 경우 공백을 구분자로해서 문자열로 전달
+		var fooMatched2 = foo2.getElementsByClassName('matched unmatched');
+		
+		var output3 = '';
+		for(var i=0;i<fooMatched2.length;i++){ //i< ㅠㅠ
+			output3 += fooMatched2[i].innerHTML + '\n';			
+		}
+		alert(output3);
+	};
+
+</script>
+</head>
+<body>
+	<p id="foo">
+		<span class="matched">a</span>
+		<span class="matched unmatched">b</span>
+		<span class="unmatched">c</span>
+	</p>
+	<p id="bar">
+		<span class="matched">x</span>
+	</p>
+</body>
+</html>

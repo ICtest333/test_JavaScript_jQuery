@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>return</title>
+<script type="text/javascript">
+	function returnTest(){
+		document.write('문장A');
+		
+		return; //함수를 호출한 곳으로 되돌아감
+		        //즉, 함수가 종료됨! (아래코드는 수행되지 않음)
+		
+		document.write('문장B');		
+	}
+	//함수호출
+	returnTest();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+문장A
+ -->

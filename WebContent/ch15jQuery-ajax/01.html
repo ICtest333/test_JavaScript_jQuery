@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery를 이용한 비동기(AJAX) 통신 구현</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+//AJAX (Asynchronous Javascript And XML) : Javascript와 XML을 이용한 비동기 통신
+	$(function(){
+		//text정보를 읽어옴
+			//URL(같은폴더내=>'파일명'only), {}옵션값(객체로묶음)
+		$.ajax('MyFirstStringAction.jsp', {
+						  //전송된 데이터:MyFirstStringAction.jsp=>text/plain
+			success:function(data){
+				$('body').append(data);
+			}//세미콜론없음
+		});
+		
+	});
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

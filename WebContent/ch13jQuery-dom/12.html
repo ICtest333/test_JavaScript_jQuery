@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//$('<img>').attr('src','img1.jpg').appendTo('body');
+		//$('<img>').attr({}).appendTo('body'); // 여러개의 속성을 제어하고자 할 경우 중괄호 {}내에...
+		$('<img>').attr({
+			src:'img1.jpg',
+			width:100,
+			height:100
+		}).appendTo('body');
+	});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

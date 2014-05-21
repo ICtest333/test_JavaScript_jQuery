@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열의 스타일 제어 (cf. CSS와 함께 사용가능)</title>
+<script type="text/javascript">
+	var msg = 'JavaScript';
+	
+	var output = '';
+	output += 'bold:' + msg.bold() + '<br>';
+	output += 'fontsize:' + msg.fontsize(15) + '<br>';
+	output += 'color:' + msg.fontcolor('red') + '<br>';
+	output += 'italics:'+msg.italics() + '<br>';
+	output += 'link:' + msg.link('http://www.daum.net') + '<br>';
+	output += 'strike:'+msg.strike()+'<br>';
+	output += 'sub:' + msg.sub() + '<br>';
+	output += 'sup:' + msg.sup();
+	
+	//출력
+	document.write(output);		
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

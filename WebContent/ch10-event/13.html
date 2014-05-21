@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트 제거</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var aa=document.getElementById('aa');
+		aa.onclick=function(){
+			alert('이벤트연결');
+			
+			//기본이벤트제거
+			return false;
+			//기본이벤트:<form>,<a>
+		};
+	};
+</script>
+</head>
+<body>
+	<a href="http://www.naver.com" id="aa">이동</a>
+</body>
+</html>

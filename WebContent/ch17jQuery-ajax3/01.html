@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>XML 데이터를 이용한 비동기 통신</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		function selectData(){
+			$.ajax({
+				type:'get',
+				url:'getDataXML.jsp',
+				dataType:'xml',
+				success:function(data){ //data:XML객체
+					$('#disp').empty(); // div초기화(항상비우고시작,누적되지않도록)
+					$(data).find('item').each(function(){
+						var str = '<div>';
+						str += $(this).find('code').text() + ','; // text()
+						str += $(this).find('name').text() + ',';
+						str += $(this).find('quantity').text() + ',';
+						str += $(this).find('price').text();
+						str += '</div>';
+						
+						$('#disp').append(str);
+					});
+				},
+				error:function(){
+					$('#disp').append('오류발생');
+				}
+			});
+		}
+		
+		selectData(); //위에서함수화시킨후호출
+	});
+</script>
+</head>
+<body>
+	<div id="disp"></div>
+</body>
+</html>

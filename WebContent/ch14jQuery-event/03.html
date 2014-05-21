@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결 : click() : style </title>
+<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	div{
+		margin:5px;
+		padding:3px;
+		border-width:3px;
+		border-style:solid;
+		border-color:black;
+		border-radius:10px;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//이벤트 연결
+		$('div').click(function(){
+			         // 이벤트가발생한객체의하위객체(h1), 이벤트가발생한객체(this)
+			var header = $('h1',this).text();
+			var paragraph = $('p',this).text();
+			
+			alert(header + '\n' + paragraph);
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h1>Header1</h1>
+		<p>Paragraph</p>
+	</div>
+	<div>
+		<h1>Header2</h1>
+		<p>Paragraph</p>
+	</div>
+	<div>
+		<h1>Header3</h1>
+		<p>Paragraph</p>
+	</div>
+</body>
+</html>

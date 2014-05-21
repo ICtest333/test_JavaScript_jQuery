@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>삼항(조건)연산자</title>
+<script type="text/javascript">
+	var year = '2014년';
+	           //조건식                                참값                             거짓값
+	var today = (year=='2014년') ? '2014년입니다.' : '2014년이 아닙니다.';
+	
+	document.write(today); // 2014년입니다.
+	
+	document.write("<br>===============<br>");
+	
+	var temp1 = 5, temp2 = 10;
+	var max, min;
+	
+	//조건식                      //참일 경우 실행되는 코드                   //거짓일 때 실행되는 코드
+	temp1>=temp2 ? (max=temp1, min=temp2) : (max=temp2, min=temp1);
+	//자바스크립트에서만 지원되는 패컨(자바는 안됨)
+	
+	document.write('큰값=' + max + '<br>');
+	document.write('작은값=' + min + '<br>');
+	
+	document.write("<br>===============<br>");
+	
+	var temp1 = 15, temp2 = 10;
+	var max, min;
+	
+	//조건식                      //참일 경우 실행되는 코드                   //거짓일 때 실행되는 코드
+	temp1>=temp2 ? (max=temp1, min=temp2) : (max=temp2, min=temp1);
+	
+	document.write('큰값=' + max + '<br>');
+	document.write('작은값=' + min + '<br>');
+	           
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+출력결과:
+2014년입니다.
+===============
+큰값=10
+작은값=5
+===============
+큰값=15
+작은값=10
+ -->

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트전달</title>
+<script type="text/javascript">
+/* 
+이벤트 전달 : 이벤트가 발생하면 어떤 순서로 이벤트가 다른 태그에 전달(전파)되는지 지정하는 것
+
+전달방식
+이벤트 버블링 : 자식 노드에서 부모 노드 순으로 이벤트를 실행하는 것을 의미함(IE/비IE지원)
+이벤트 캡쳐링 : 이벤트가 부모노드에서 자식노드 순으로 실행되는 것을 의미함(비IE만 지원)
+
+ - 이벤트 버블링
+	div
+	|
+	div			^ 자식노드에서 부모노드로 이벤트 전파
+	|			|
+	p			|
+	|			|
+	span : 이벤트 발생
+
+ - 이벤트 캡쳐링
+	div
+	|
+	div	:	이벤트 발생 
+	|			|
+	p			|
+	|			|
+	span  		V  부모노드에서 자식노드로 이벤트 전파
+		
+ */
+ 	window.onload=function(){
+		//이벤트연결
+		document.getElementById('header').onclick=function(){
+			alert('header');
+			this.style.background='pink'; // <h1> => body(부모)
+		};
+		document.getElementById('paragraph').onclick=function(e){
+			alert('paragraph');
+			this.style.background='yellow'; // <p> => <h1>(부모)
+			
+			//이벤트 객체 호출
+			var event = e || window.event;
+			
+			//이벤트 전달(전파) 막기
+			//IE : 속성
+			event.cancelBubble=true;
+			//비IE : 메소드
+			if(event.stopPropagation){//메소드있으면true
+				event.stopPropagation();
+			}
+		};
+	}; 
+ 
+</script>
+</head>
+<body>
+	<h1 id="header">header
+		<p id="paragraph">Paragraph</p>
+	</h1>
+</body>
+</html>

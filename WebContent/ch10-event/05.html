@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크립트 태그내에서 이벤트 연결</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var header = document.getElementById('header');
+		
+		//이벤트가 발생하면 호출할 함수(선언적 함수)
+		function whenClick(){
+			alert('CLICK');
+		}
+		//이벤트 연결
+		header.onclick = whenClick; //함수명을 넘김(소괄호없음)
+		//header.onclick = whenClick(); //=> 함수를 1회 호출하고 이벤트 미연결 <금지!!>
+	};
+</script>
+</head>
+<body>
+	<div id="header">클릭</div>
+</body>
+</html>

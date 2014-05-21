@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식선택자</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//자식선택자(사이에  > )
+		$('body > div').css('border','3px solid red'); // 태그의 자식(직계자식)
+	});
+</script>
+</head>
+<body>
+<div>
+	<ul>
+		<li>딸기</li>
+		<li>사과</li>
+		<li>포도</li>
+		<li>바나나</li>
+		<li>멜론</li>
+		<li>토마토</li>
+	</ul>
+	<div>가을여행</div>
+</div>
+<p>
+	<span>크크</span>
+</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript">
+	var array = ['포도','사과','바나나','망고'];
+	      //인덱스     0     1     2     3  
+	document.write(array+'<br>'); // 포도,사과,바나나,망고
+	
+	document.write(array[0]+'<br>'); // 포도
+	
+	//출력용 변수
+	var output = '';
+	for(var i=0;i<array.length;i++){
+		output += i + ':' + array[i] + '\n'; // 경고창등 응용프로그램에 전달할 경우(<br>아니고 \n)
+	}
+	
+	alert(output);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

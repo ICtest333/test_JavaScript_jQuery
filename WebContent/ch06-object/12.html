@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>은닉화와 캡슐화</title>
+<script type="text/javascript">
+	function Rectangle(w,h){
+
+		//지역변수는 외부에서 호출 불가(즉, 은닉화)
+		var width = w;
+		var height = h;
+		this.getWidth = function(){
+			return width;
+		};
+		this.getHeight = function(){
+			return height;
+		};
+	}
+	
+	var rectangle = new Rectangle(5,7);
+	
+	//rectangle.width = 10; //새로운 속성이 추가된 것
+
+	document.write(rectangle.width+', '+rectangle.height+'<br>');//undefined, undefined
+	
+	document.write(rectangle.getWidth()+', '+rectangle.getHeight());//5, 7
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

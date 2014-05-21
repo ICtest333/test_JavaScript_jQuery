@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+	//선언적 함수
+	function check(){
+		document.write('함수는 호출해야 동작함<br>');
+		
+	}
+	
+	//함수호출(소괄호명시)
+	check();
+	
+	function check2(msg){ /* 인자에는 var 붙이지 않은 */
+		document.write(msg + '을 좋아합니다.<br>');
+	}
+	
+	//함수호출
+	check2('가을');
+	
+	function check3(num){
+		return num*num;
+	}
+	
+	//함수 호출
+	var number = check3(10);
+	document.write('number = ' + number+'<br>');
+	
+	//익명 함수(변수에 대입, 변수명을 함수명처럼 활용)
+	var play = function(){
+		document.write('운동~ 좋아해요~~<br>');
+	}; /* 세미콜론 */	
+	//익명함수호출
+	play();
+	
+	var play2 = function(item){
+		document.write(item+'~ 좋아해요!!!<br>');
+	};
+	//익명함수호출
+	play2('축구');
+	
+	var play3 = function(x,y){
+		return x+y;
+	};
+	//함수 호출
+	var result = play3(5,7);
+	document.write('result ='+result);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+함수는 호출해야 동작함
+가을을 좋아합니다.
+number = 100
+운동~ 좋아해요~~
+축구~ 좋아해요!!!
+result =12
+ -->

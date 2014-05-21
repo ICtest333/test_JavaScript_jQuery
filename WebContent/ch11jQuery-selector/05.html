@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그선택자와 ID선택자 연결</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//특정 id속성을 가지는 태그 선택 (샵#)
+		$('h1#target').css('color','orange');
+	});
+</script>
+</head>
+<body>
+	<h1>header-0</h1>
+	<h1 id="target">header-1</h1>
+	<h1>header-2</h1>
+</body>
+</html>

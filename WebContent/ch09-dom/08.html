@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>노드 탐색 : 부모, 자식, 형제</title>
+<script type="text/javascript">
+/* 
+관련된 노드를 참조하기 위한 포로퍼티
+프로퍼티명			취득할 수 있는 노드
+parentNode			부모 노드
+childNodes			자식노드리스트
+firstNode			최초자식노드
+lastNode			최후자식노드
+nextSibling			다음노드
+previousSibling		하나전의 노드
+
+공백(줄바꿈)도 텍스트(자식) 취급
+ */ 
+ 	window.onload=function(){
+		var my = document.getElementById('my');
+		var elem;
+		
+		var children = my.childNodes;
+		alert(children[0].id); //=> undefined (공백노드)
+		alert(children[1].id); //=> 'c'
+		alert(children[2].id); //=> undefined (공백노드)
+		alert(children[3].id); //=> 'e'
+		alert(children[4].id); //=> undefined (공백노드)
+		
+		//형제요소
+		elem = my.previousSibling.previousSibling; 
+		alert(elem.id);//=> 'b'
+		
+		elem = my.nextSibling.nextSibling;
+		alert(elem.id);//=> 'f'
+		
+};
+
+
+
+</script>
+</head>
+<body>
+<div id="a">
+	<div id="b"></div>
+	<div id="my">
+		<div id="c">
+			<div id="d"></div>
+		</div>
+		<div id="e"></div>
+	</div>
+	<div id="f"></div><div id="g"></div>
+</div>
+</body>
+</html>

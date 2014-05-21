@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+<script type="text/javascript">
+	var date = new Date();
+	
+	document.write('date : '+date+'<br>'); //date : Fri May 09 2014 14:12:47 GMT+0900 (대한민국 표준시)
+	document.write('현재 연도 : '+date.getFullYear()+'<br>'); //현재 연도 : 2014
+	//getMonth() : 월 : 0~11
+	document.write('현재 월 : '+date.getMonth()+'<br>'); //4
+	document.write('현재 일 : '+date.getDate()+'<br>'); //현재 일 : 9
+	//요일: 0(일요일)~6(토요일)
+	document.write('요일 : '+date.getDay()+'<br>'); //5(금)
+	//시: 0 ~ 23
+	document.write('시 : '+date.getHours()+'<br>'); 
+	document.write('분 : '+date.getMinutes()+'<br>'); 
+	document.write('초 : '+date.getSeconds()+'<br>'); 
+	document.write('ms : '+date.getMilliseconds()+'<br>'); 
+	document.write('지역포맷적용 : '+date.toLocaleString()+'<br>'); 
+	document.write('날짜(포맷적용) : '+date.toLocaleDateString()+'<br>'); 
+	document.write('시간(포맷적용) : '+date.toLocaleTimeString()+'<br>'); 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

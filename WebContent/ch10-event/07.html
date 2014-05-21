@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gallery(dom이용)</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var num=1;
+		var gallery = document.getElementById('gallery');
+		
+		document.getElementById('prev').onclick=function(){
+			num--;
+			if(num<1) num=7;
+			gallery.src = 'img'+num+'.jpg';
+		};
+		document.getElementById('next').onclick=function(){
+			num++;
+			if(num>7) num=1;
+			gallery.src = 'img'+num+'.jpg';
+		};		
+	};
+</script>
+</head>
+<body>
+	<h1>이미지 넘기기</h1>
+	<p>
+		<img src="left_btn.png" id="prev">
+		<img src="img1.jpg" id="gallery">
+		<img src="right_btn.png" id="next">
+	</p>
+</body>
+</html>

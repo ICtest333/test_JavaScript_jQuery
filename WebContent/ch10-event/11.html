@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS와 이벤트 활용</title>
+<style type="text/css">
+	.foo-before{
+		background-color:white;
+		color:black;
+	}
+	.foo-after{
+		background-color:black;
+		color:white;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var foo=document.getElementById('foo');
+		foo.onclick=function(){
+			this.className = (this.className=='foo-before')?'foo-after':'foo-before';
+		};
+	};
+</script>
+</head>
+<body>
+	<div id="foo" class="foo-before">Click me</div>
+</body>
+</html>

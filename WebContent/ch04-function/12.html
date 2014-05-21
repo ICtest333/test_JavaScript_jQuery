@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열을 실행코드로 변환 : eval() </title>
+<script type="text/javascript">
+	
+	//eval(string) : string을 자바스크립트 실행 코도르 변환
+	
+	//자바실행코드가 아니라 문자열
+	var willEval = '';
+	willEval += 'var number = 10;'; //작은따음표안에 세미콜론
+	willEval += 'alert(number);';
+	
+	//eval() : 문자열 => 실행코드
+	eval(willEval); // alert창 : 10
+	alert(number);  // alert창 : 10 (number : 전역변수)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

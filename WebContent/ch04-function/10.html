@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수와 지역변수</title>
+<script type="text/javascript">
+	function f(){
+		var n = 100;
+		function g(){
+			document.write('n = '+ n + '<br>');
+			document.write('g is calleeeeed');
+		}
+		return g; //내부함수 반환
+	}
+	//f함수를 실행시켜 내부함수를 반환함.
+	var a = f();
+	document.write(a+'<br>'); /* function g(){ document.write('n = '+ n + '
+			'); document.write('g is calleeeeed'); } */
+		
+	a(); // 내부함수 실행 !!!
+		/* 	n = 100
+			g is calleeeeed */
+	
+/* n : f함수의 지역변수임에도 f함수 종료후에도 내부함수에서 호출됨
+
+* 클로저 : 지역변수는 함수가 실행될 때 생성되고 함수가 종료될 때 사라지는데
+	      내부함수를 만들고 내부함수를 감싸고 있는 함수의 지역변수를 내부함수에서 호출할 때
+	      내부함수를 감싸고 있는 함수가 종료되었지만 내부함수에서 지역변수를 호출할 수 있도록
+	      지역변수를 남겨두는 현상을 클로저라고 함.
+ */		
+	
+	document.write('<br>==========================<br>');
+	
+	//f함수를 실행한 후 바로 내부함수(g함수) 호출	: 변수에 대입하지 않고 바로 호출하는 패턴
+	f()(); // f()() 에서 f()가 g 정보를 담고 있으므로  f()() ==> g()
+		/* 	n = 100
+		g is calleeeeed */ 
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

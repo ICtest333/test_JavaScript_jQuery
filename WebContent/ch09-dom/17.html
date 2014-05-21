@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스타일 제거</title>
+<style type="text/css">
+	div{
+		font-size:24px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var test1 = document.getElementById('test_1');
+		
+		//CSS의 속성을 제어하는 것이 아니라 태그의 스타일 관련 속성을 제거함
+		test1.style.removeProperty('border');
+		test1.style.removeProperty('margin');
+	};
+</script>
+</head>
+<body>
+	<div id="test_1" style="margin:20px;border:1px #000000 solid">
+		테스트1-1
+	</div>
+</body>
+</html>

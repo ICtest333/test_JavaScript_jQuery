@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery 연결</title>
+<!-- <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script> -->
+<!-- CDN 방식 : URL 통해 js 파일을 연결 -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	//window.onload=function(){}; 와 유사하나, 반복적 사용도 가능하다는 점 등에 차이가 있음
+	//문서가 준비 완료되면 매개변수로 전달된 함수를 실행하라는 의미
+	//$(document).ready(function(){});
+	$(document).ready(function(){
+		alert('First READY');
+	});
+	$(document).ready(function(){
+		alert('Second READY');
+	});
+	$(document).ready(function(){
+		alert('Third READY');
+	});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

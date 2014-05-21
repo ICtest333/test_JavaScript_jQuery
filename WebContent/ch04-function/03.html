@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>지역변수와 전역변수</title>
+<script type="text/javascript">
+/* 
+1. 지역변수
+함수 안에서 var를 사용해서 선언한 변수, 함수가 끝나면 소멸
+
+2. 전역변수
+함수 밖엥서 만들어진 모든 변수
+함수 안에서 var없이 만들어진 변수
+함수가 끝나도 메모리에 남아 있음(변수 사용에 주의 필요!!)
+ */
+
+ 	function test1(){
+		var i = 10; //지역변수
+		document.write(i);
+	}
+	test1();
+	//함수안에서 var를 명시한 변수는 지역변수이기 때문에 함수종료후 메모리에서 소멸됨.
+	//함수 종료후에 다시 지역변수 호출하면 오류 발생함.
+	//document.write('<br>함수 종료 후 : ' + i +'<br>');
+	
+	var j; //전역변수
+	function test2(){
+		j=200;
+		document.write('<br>'+j);
+	}
+	test2();
+	
+	function test3(){
+		document.write('<br>'+j);
+	}
+	test3();
+	
+	//함수안에서 var없이 변수 선언할 경우 전역변수가 됨(권장하지 않음)
+	function test4(){
+		m = 40; //전역변수
+		document.write('<br>함수 안에서 호출 : ' + m);
+	}
+	test4();
+	document.write('<br>함수 밖에서(함수종료후) 호출 : ' + m);
+ 
+	//var를 명시하지 않고 전역변수 선언(권장하지 않음)
+	//b; //var를 명시하지 않고 전역변수를 만들때 선언만 하고 초기화 하지 않고 함수에서 초기화해서 호출하면 오류발생함
+	b = 20;
+	function test5(){
+		b = 30;
+		document.write('<br>'+ b);
+	}
+	test5();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+10
+200
+200
+함수 안에서 호출 : 40
+함수 밖에서(함수종료후) 호출 : 40
+30
+ -->

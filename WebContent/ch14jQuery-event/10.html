@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윈도우 이벤트 처리 : scroll(); Infinity Scroll 구현</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+/* 
+윈도우 이벤트		설명
+scroll				윈도우를 스크롤 할때
+ */
+	$(function(){
+		//스크롤이벤트발생시
+		$(window).scroll(function(){
+			//스크롤의 높이
+			var scrollHeight = $(window).scrollTop() + $(window).height();
+			
+			//문서의 높이
+			var documentHeight = $(document).height();
+			
+			//스크롤의 높이와 문서의 높이가 같으면
+			if(scrollHeight == documentHeight){
+				for(var i=0;i<10;i++){
+					$('<h1>Infinity Scroll</h1>').appendTo('body');
+				}
+			}			
+		});
+	});
+	$(function(){
+		for(var i=0;i<20;i++){
+			$('<h1>content</h1>').appendTo('body');
+		}
+		$('<hr>').appendTo('body');
+	});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

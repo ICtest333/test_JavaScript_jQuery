@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소의 삭제</title>
+<script type="text/javascript">
+	var array = ['포도','사과','귤'];
+	            // 0    1    2
+	delete array[1]; // 제거한 위치에 빈 요소를 남김
+	document.write(array+'<br>'); // 포도,,귤
+	
+	var array2 = ['포도','사과','귤','망고'];
+	array2.splice(2,1); // 인덱스 2에 해당하는 요소부터 하나(1)의 요소를 제거하고 제거된 곳을 메움
+	document.write(array2+'<br>'); // 포도,사과,망고
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

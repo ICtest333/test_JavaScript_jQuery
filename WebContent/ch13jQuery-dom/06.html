@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 스타일 처리</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var color = ['red','white','purple'];
+		var background = ['gray','pink','yellow'];
+		
+		$('h1').css({
+			color:function(index){
+				return color[index];
+			},
+			background:function(index){
+				return background[index];
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

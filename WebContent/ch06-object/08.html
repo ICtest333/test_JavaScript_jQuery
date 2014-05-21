@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수를 이용한 객체 생성</title>
+<script type="text/javascript">
+	//생성자 함수
+	function Person(name){
+		this.name = name;		
+	}
+	
+	//객체 생성
+	var mySon = new Person('달봉이');
+	
+	document.write(mySon.name+'<br>'); //달봉이
+	document.write(mySon['name']+'<br>');//달봉이
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

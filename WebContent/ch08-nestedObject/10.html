@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date 객체를 이용한 디지털 시계 (PC시간)</title>
+<script type="text/javascript">
+	window.onload=function(){
+		window.setInterval(function(){
+			var time = new Date();
+			var hours = time.getHours();
+			var minutes = time.getMinutes();
+			var seconds = time.getSeconds();
+			
+			var clock = '';
+			clock += ((hours%12 < 10)? '0':'') + hours%12;
+			clock += ((minutes < 10)? ':0':':') + minutes;
+			clock += ((seconds < 10)? ':0':':') + seconds;
+			
+			var display = document.getElementById('display');
+			display.innerHTML = clock.bold();
+			
+		}, 1000);
+	};
+</script>
+</head>
+<body>
+	<span id="display"></span>
+</body>
+</html>

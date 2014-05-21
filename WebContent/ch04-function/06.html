@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 익명 함수를 매개변수(인자)로 받는 함수</title>
+<script type="text/javascript">
+
+	//함수를 10번 호출하는 함수
+	function callFunctionTenTimes(otherFunction){
+		for(var i=0;i<10;i++){
+			otherFunction(); // 매개변수로 전달된 함수를 실행
+		}
+	}
+
+	//함수 호출(전달할 함수를 익명함수 형태로 기재)
+	callFunctionTenTimes(function(){
+		document.write('Hello World~!!!<br>');
+	}); 
+	                                    
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+Hello World~!!!
+ -->

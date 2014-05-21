@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상속</title>
+<script type="text/javascript">
+//자바스크립트에서는 프로토타입(공통영역)을 이용해서 상속을 수행함
+
+	function Human(age){	
+	  //프로퍼티   지역변수
+		this.age = age;
+	}
+	
+	Human.prototype.type='사람';
+	Human.prototype.getType = function(){
+		return this.type;
+	};
+	Human.prototype.getAge = function(){
+		return this.age;
+	};
+	
+	var human = new Human(30); // 오타 금물!!! ㅠㅠ
+	document.write('human.type : '+human.type+'<br>');
+	document.write('human.age : '+human.age+'<br>');
+	document.write('human.getType() : '+human.getType()+'<br>');
+	document.write('human.getAge() : '+human.getAge()+'<br>');
+	
+	document.write('=======================<br>');
+	
+	function Student(age){
+		this.age = age;	
+	}
+	
+	Student.prototype = Human.prototype; //= Student.prototype = new Human();
+	//프로토타입의 생성자를 재정의(정의하지 않아도 구동상의 문제는 없음)
+	Student.prototype.constructor = Student;
+	
+	var student = new Student(40);
+	document.write('student.type : '+student.type+'<br>');
+	document.write('student.age : '+student.age+'<br>');
+	document.write('student.getType() : '+student.getType()+'<br>');
+	document.write('student.getAge() : '+student.getAge()+'<br>');
+	
+	document.write('=======================<br>');
+	
+	//instanceof : 상속관계여부 확인
+	document.write((student instanceof Student) +'<br>'); //true
+	document.write((student instanceof Human) +'<br>'); //true
+	document.write((student instanceof Object) +'<br>'); //true
+	document.write((human instanceof Object) +'<br>'); //true
+	document.write((student instanceof Number) +'<br>'); //false
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+<!-- 
+human.type : 사람
+human.age : 30
+human.getType() : 사람
+human.getAge() : 30
+=======================
+student.type : 사람
+student.age : 40
+student.getType() : 사람
+student.getAge() : 40
+=======================
+true
+true
+true
+true
+false
+ -->

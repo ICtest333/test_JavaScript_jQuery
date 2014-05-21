@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소의 정렬</title>
+<script type="text/javascript">
+	var array = ['가','하','아','나'];
+	array.sort(); //사전순	
+	//출력
+	document.write(array+'<br>'); //가,나,아,하
+	array.reverse(); //현재 정렬의 반대로 변환
+	document.write(array+'<br>');//하,아,나,가
+	document.write('===================<br>');
+	
+	var array2 = [52,273,103,32];
+	array2.sort();
+	document.write(array2+'<br>');//103,273,32,52 (숫자를 문자로 인식)
+	
+	array2.sort(function(left,right){
+		return left - right; // 작은수를 앞으로
+	});
+	document.write(array2+'<br>');//32,52,103,273
+	
+	array2.reverse(); //현재 정렬의 반대로 변환
+	document.write(array2+'<br>');//273,103,52,32
+	
+	array2.sort(function(left,right){
+		return right - left;//큰수를 앞으로
+	});
+	document.write(array2+'<br>');//273,103,52,32
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

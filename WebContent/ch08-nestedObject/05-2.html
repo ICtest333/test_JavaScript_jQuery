@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 체크 (정규표현식 연습)</title>
+<script type="text/javascript">
+	function check(){
+		var email, regex, n;
+		email = document.myForm.email.value;
+		n = email.indexOf('@');
+		
+		//regex = /\w+@\w+\.\w+/; // 정규표현식(문자/숫자 @ 문자/숫자 . 문자/숫자)
+		regex = /\w+@\w+\.\w+/;
+		
+		if(regex.test(email)){ // test(): 정규 표현식과 일치하는 문자열이 있으면 true를 아니면 false를 반환
+			document.myForm.id.value = email.substr(0,n); /* substr(0,n) : end index (n) 전까지 추출 */
+		}else{
+			document.myForm.id.value='';
+			alert('이메일 형식에 맞게 입력하세요');
+		}
+	}
+</script>
+</head>
+<body>
+<form name="myForm">
+	id <input type="text" name="id" readonly="readonly"><br>
+	email <input type="text" name="email"><br>
+	<input type="button" value="입력" onclick="check()">
+</form>
+</body>
+</html>

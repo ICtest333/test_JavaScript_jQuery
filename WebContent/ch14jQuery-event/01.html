@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결 : bind() </title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//이벤트 연결
+		//bind() : 현재 존재하는 문서 객체에만 이벤트를 연결
+		$('h1').bind('click',function(){
+			//this : 이벤트가 발생한 객체
+			$(this).html(function(index,html){
+				return html + '+';
+			});			
+		});	
+		
+	});
+</script>
+</head>
+<body>
+	<h1>Header-0<h1>
+	<h1>Header-1<h1>
+	<h1>Header-2<h1>
+</body>
+</html>

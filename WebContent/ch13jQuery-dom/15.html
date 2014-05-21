@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성 : append 연습</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var content = [
+		               {name:'전지현',city:'서울'},
+		               {name:'김연아',city:'부산'},
+		               {name:'손연재',city:'광주'}
+		               ];
+		$('div').append(function(index){          /* 'div' 태그에 접근 */
+			var item = content[index];
+			var output = '';
+			output += '<h1>' + item.name + '</h1>';
+			output += '<h2>' + item.city + '</h2>';
+			
+			return output;
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

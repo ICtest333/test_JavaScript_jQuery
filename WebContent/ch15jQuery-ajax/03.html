@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery를 이용한 비동기(AJAX) 통신 구현 : getJSON(); JSON 객체 이용; </title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//JSON (JavaScript Object Notation) 데이터 읽어 옴
+			      //URL, 			데이터 전송되면 호출되는 함수
+		$.getJSON('MyFirstJSONAction.jsp',function(data){ // data : JSON객체
+			$(data).each(function(index,item){
+				var output = '';
+				output += '<div>';
+				output += '<h1>' + item.name + '</h1>';
+				output += '<p>' + item.job + '</p>';
+				output += '<p>' + item.age + '</p>';
+				output += '</div>';
+				
+				$('#output').append(output);
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>

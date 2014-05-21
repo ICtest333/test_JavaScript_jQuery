@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성 : append 연습</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var h1 = '<h1>Header1</h1>';
+		var h2 = '<h2>Header2</h2>';
+		/* 
+		$('body').append(h1);
+		$('body').append(h2);
+		$('body').append(h1);
+		$('body').append(h2);
+		 */
+		$('body').append(h1,h2,h1,h2);
+		
+		//$(h1,h2,h1,h2).appendTo('body');//오동작 
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

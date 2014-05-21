@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 추가</title>
+<style type="text/css">
+	.high_light_0{background:yellow;}
+	.high_light_1{background:orange;}
+	.high_light_2{background:blue;}
+	.high_light_3{background:green;}
+	.high_light_4{background:red;}
+</style>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<script type="text/javascript">
+	$(function(){
+		//클래스추가 : 내부적으로 아래<h1>태그들을 배열로 인식(내부적으로 루핑)
+		$('h1').each(function(index,item){ // 인자(index,item) !!
+			//h1태그
+			$(item).addClass('high_light_' + index);//item==this (둘다가능)
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>item - 0</h1>
+	<h1>item - 1</h1>
+	<h1>item - 2</h1>
+	<h1>item - 3</h1>
+	<h1>item - 4</h1>
+</body>
+</html>

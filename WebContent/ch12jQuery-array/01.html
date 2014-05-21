@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//배열선언
+		var array = [
+		             {name:'naver',link:'http://www.naver.com'},
+		             {name:'daum',link:'http://www.daum.net'},
+		             {name:'nate',link:'http://www.nate.com'},
+		             {name:'google',link:'http://www.google.co.kr'} /*  마지막엔 쉼표없음 */
+		             ];
+		     //배열,  배열로부터 데이터를 받아서 처리하는 함수
+		$.each(array,function(index,item){
+			//index : 배열의 index
+			//item : 배열의 index를 통해 접근한 객체 (kex:value)
+			var output='';
+			//output+='<a href="'+item.link+'">';
+			output+='<a href='+item.link+'>';  /* 태그내속성의 큰따옴표는 생략가능
+			                                      표준: 큰따옴표, (작은따옴표,생략모두가능)*/
+			output+='<h1>'+item.name+'</h1>';
+			output+='</a>';
+			
+			document.body.innerHTML+=output;
+		});
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

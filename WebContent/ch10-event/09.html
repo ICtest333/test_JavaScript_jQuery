@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>key 이벤트를 이용한 입력 데이터 길이 체크</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById('content').onkeyup=function(){ // onkeyup ㅠㅠ
+			
+			var inputLength = this.value.length; //입력한 글자수
+			//남은 글자수를 구함
+			var remain = 150- inputLength;
+			
+			var letter = document.getElementById('letter');
+			letter.innerHTML = remain;
+		};
+	};
+</script>
+</head>
+<body>
+<h4 id="letter">150</h4>
+<textarea rows="5" cols="30" name="content" id="content"></textarea>
+</body>
+</html>
